@@ -10,3 +10,19 @@ import ntlk
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 
+df = pd.read_csv("./spotify_millsongdata.csv")
+
+
+print("Number of data in this CSV: " + df.shape)
+
+print("First 5 data rows: " + df.head())
+
+print("Information about the dataset: /n" + df.info())
+
+print("Number of null entries: " + df.isnull.sum())
+
+
+
+
+
+
