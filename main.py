@@ -14,16 +14,16 @@ from nltk.tokenize import word_tokenize
 df = pd.read_csv("./spotify_millsongdata.csv")
 
 
-print("\nNumber of data in this CSV: " + df.shape)
+print("\nNumber of data in this CSV: ", df.shape)
 
-print("\nFirst 5 data rows: " + df.head())
+print("\nFirst 5 data rows: ", df.head())
 
-print("\nInformation about the dataset: " + df.info())
+print("\nInformation about the dataset: ", df.info())
 
-print("\nNumber of null entries: " + df.isnull.sum())
+print("\nNumber of null entries: ", df.isnull().sum())
 
 top_artists = df['artist'].value_counts().head(10)
-print("\nTop 10 artists: " + top_artists)
+print("\nTop 10 artists: ", top_artists)
 
 
 df = df.sample(10000)
