@@ -1,6 +1,6 @@
 Here's a comprehensive, engaging README.md for your `music_recommendations` repository that transforms it into an attractive, well-documented project:
 
-```markdown
+
 # 🎵 Music Recommendations Engine 🎵
 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/)
