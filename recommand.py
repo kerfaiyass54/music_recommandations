@@ -41,6 +41,36 @@ plt.title("Most Common Words in Lyrics")
 plt.show()
 
 
+nltk.download('punkt')
+nltk.download('punkt_tab')
+nltk.download('stopwords')
+
+stop_words = set(stopwords.words('english'))
+
+
+def preprocess_text(text):
+    text = re.sub(r"[^a-zA-Z\s]", "", text)
+    text = text.lower()
+    tokens = word_tokenize(text)
+    tokens = [word for word in tokens if word not in stop_words]
+    return " ".join(tokens)
+
+df['cleaned_text'] = df['text'].apply(preprocess_text)
+
+print("Applied data preprocessing! \n")
+
+print(df.head())
+
+tfidf_vectorizer = TfidfVectorizer(max_features=5000)
+tfidf_matrix = tfidf_vectorizer.fit_transform(df['cleaned_text'])
+cosine_sim = cosine_similarity(tfidf_matrix, tfidf_matrix)
+
+
+
+
+
+
+
 
 
 
